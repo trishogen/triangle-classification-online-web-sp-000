@@ -11,7 +11,7 @@ class Triangle
       raise TriangleError
     elsif scalene?
       :scalene
-    elsif sides[0] == sides[1] && sides[1] == sides[2]
+    elsif equilateral?
       :equilateral
     else
       :isosceles
