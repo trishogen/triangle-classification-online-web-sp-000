@@ -10,7 +10,7 @@ class Triangle
   end
 
   def kind
-    if sides.detect {|side| <= 0}
+    if sides.detect {|side| side <= 0}
       raise TriangleError
     end
   end
