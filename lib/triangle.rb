@@ -11,4 +11,8 @@ class Triangle
   def kind
   end
 
+  class TriangleError < StandardError
+    "Each side must be larger than 0."
+  end
+
 end
