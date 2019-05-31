@@ -29,7 +29,7 @@ class Triangle
   end
 
   def inequality?
-    sides[0] + sides[1] < sides[2] | sides[1] + sides[2] < sides[0] | sides[0] + sides[2] < sides[1]
+    (sides[0] + sides[1]) < sides[2] | (sides[1] + sides[2]) < sides[0] | (sides[0] + sides[2]) < sides[1]
   end
 
   class TriangleError < StandardError
