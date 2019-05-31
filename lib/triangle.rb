@@ -9,6 +9,8 @@ class Triangle
   def kind
     if sides.detect {|side| side <= 0}
       raise TriangleError
+    elsif inequality?
+      raise TriangleError
     elsif scalene?
       :scalene
     elsif equilateral?
@@ -26,8 +28,12 @@ class Triangle
     sides[0] == sides[1] && sides[1] == sides[2]
   end
 
+  def inequality?
+    sides[0] + sides[1] < sides[2] | sides[1] + sides[2] < sides[0] | sides[0] + sides[2] < sides[1]
+  end
+
   class TriangleError < StandardError
-    "Each side must be larger than 0."
+    "This is not a triangle."
   end
 
 end
