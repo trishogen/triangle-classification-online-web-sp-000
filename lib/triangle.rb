@@ -9,14 +9,17 @@ class Triangle
   def kind
     if sides.detect {|side| side <= 0}
       raise TriangleError
-    elsif sides[0] != sides[1] && sides[1] != sides[2] && sides[0] != sides[2]
-      # sides[0] == sides[1] | sides[1] == sides[2] | sides[0] == sides[2]
+    elsif scalene?
       :scalene
     elsif sides[0] == sides[1] && sides[1] == sides[2]
       :equilateral
     else
       :isosceles
     end
+  end
+
+  def scalene?
+    sides[0] != sides[1] && sides[1] != sides[2] && sides[0] != sides[2]
   end
 
   class TriangleError < StandardError
