@@ -22,6 +22,10 @@ class Triangle
     sides[0] != sides[1] && sides[1] != sides[2] && sides[0] != sides[2]
   end
 
+  def equilateral?
+    sides[0] == sides[1] && sides[1] == sides[2]
+  end
+
   class TriangleError < StandardError
     "Each side must be larger than 0."
   end
